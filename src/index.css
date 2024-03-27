@@ -2,5 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 .active{
-    color: rgb(5, 107, 80);
+    color: rgb(17, 245, 185);
+    font: bold;
+    
+}
+*{
+    /* border: 1px solid red; */
 }
