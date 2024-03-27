@@ -8,7 +8,7 @@ function Nav() {
     const has='#1f2937'
   return (
     <div className='px-20 ' >
-    <Navbar fluid rounded className="">
+    <Navbar fluid rounded className="bg-transparent text-white">
 
 
     <Navbar.Brand as={Link} href="#">
@@ -20,12 +20,12 @@ function Nav() {
         <Navbar.Toggle />
       </div>
 
-    {/* <Navbar.Toggle /> */}
-    <Navbar.Collapse className='lg:ml-40'>
-      <Navbar.Link>  <NavLink to='/'>Home</NavLink> </Navbar.Link>
-      <Navbar.Link > <NavLink to='/comedy'>Comedy</NavLink></Navbar.Link>
-      <Navbar.Link > <NavLink to='/tvshows'>Tvshows</NavLink></Navbar.Link>
-      <Navbar.Link > <NavLink to='/about'>About</NavLink></Navbar.Link>
+
+    <Navbar.Collapse className='lg:ml-40 text-white'>
+      <Navbar.Link>  <NavLink to='/' className='text-white' >Home</NavLink> </Navbar.Link>
+      <Navbar.Link > <NavLink to='/comedy' className='text-white'>Comedy</NavLink></Navbar.Link>
+      <Navbar.Link > <NavLink to='/tvshows' className='text-white'>Tvshows</NavLink></Navbar.Link>
+      <Navbar.Link > <NavLink to='/about' className='text-white'>About</NavLink></Navbar.Link>
      
   
     </Navbar.Collapse>
