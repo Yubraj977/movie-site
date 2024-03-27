@@ -7,7 +7,7 @@ import { Link,NavLink } from 'react-router-dom'
 function Nav() {
     const has='#1f2937'
   return (
-    <div className='px-20 ' >
+    <div className='lg:px-20 ' >
     <Navbar fluid rounded className="bg-transparent text-white">
 
 
