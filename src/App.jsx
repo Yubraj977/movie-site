@@ -5,6 +5,7 @@ import Home from './elements/pages/Home'
 import About from './elements/pages/About'
 import Comedy from './elements/pages/Comedy'
 import Tvshows from './elements/pages/Tvshows'
+import Upload from './elements/pages/Upload'
 
 
 const router=createBrowserRouter(
@@ -15,6 +16,7 @@ const router=createBrowserRouter(
       <Route path='about' element={<About/>}/>
       <Route path='comedy' element={<Comedy/>}/>
       <Route path='tvshows' element={<Tvshows/>}/>
+      <Route path='upload' element={<Upload/>}/>
     </Route>
   )
 )
