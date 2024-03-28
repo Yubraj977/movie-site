@@ -5,14 +5,14 @@ function Upload() {
         <div className=' flex justify-center items-center '>
             <form className='border p-10 rounded-lg'>
 
-            <div className="flex w-[35rem] flex-col gap-2">
+            <div className="flex lg:w-[35rem] flex-col gap-2 w-full">
                   
       <Label >Name</Label>
       <TextInput type="text"  placeholder="Disabled input"  />
 
 
-      <Label >Thumbnail Url</Label>
-      <TextInput type="text" i placeholder="Disabled readonly input"  className='w-full'   />
+      <Label >Thumbnail </Label>
+      <TextInput type="file" i placeholder="Disabled readonly input"  className='w-full'   />
 
 
       <Label >Download Url</Label>

@@ -2,7 +2,8 @@ import React from 'react'
 import { FaArrowRight } from "react-icons/fa";
 import { CgSearch } from "react-icons/cg";
 import Card from './components/Card';
-
+import movie from '../../movie';
+console.log(movie);
 function Home() {
     return (
         <div className='flex  flex-col items-center mt-12' >
@@ -38,16 +39,16 @@ function Home() {
 
 
             <div className='flex flex-wrap gap-3 justify-center mt-10'> 
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+               {movie.map((item)=><Card 
+               name={item.name}
+               genre={item.genre}
+               language={item.language}
+               duratioin={item.duration}
+               thumbinal={item.thumbinal}
+               date={item.date}
+               rating={item.rating}
+
+               />)}
             </div>
         </div>
     )
