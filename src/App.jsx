@@ -7,7 +7,7 @@ import Comedy from './elements/pages/Comedy'
 import Tvshows from './elements/pages/Tvshows'
 import Check from './elements/pages/Check'
 import Upload from './elements/pages/Upload'
-
+import MovieDetailsPage from './elements/pages/MovieDetailsPage'
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +19,7 @@ const router=createBrowserRouter(
       <Route path='tvshows' element={<Tvshows/>}/>
       <Route path='upload' element={<Upload/>}/>
       <Route path='check' element={<Check/>}/>
+      <Route path="/movie/:id" element={<MovieDetailsPage />} />
     </Route>
   )
 )

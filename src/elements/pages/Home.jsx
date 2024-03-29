@@ -7,15 +7,15 @@ import movie from '../../movie';
 
 
 function Home() {
-    const [movies,setmovies]=useState([])
-    const [searchQuery,setsearchQuery]=useState('')
+    const [movies, setmovies] = useState([])
+    const [searchQuery, setsearchQuery] = useState('')
     console.log(movies);
     useEffect(() => {
         fetch('https://lyricsa-z.xyz/api/movie/')
             .then((data) => data.json())
             .then((movie) => {
                 setmovies(movie);
-                
+
             })
     }, [])
 
@@ -23,12 +23,12 @@ function Home() {
     // const filtredMovies=movies.filter((movie)=>movie.name.toLowerCase().includes(searchQuery.toLowerCase()))
     // console.log(searchQuery);
     // console.log(filtredMovies);
-console.log(movies);
-  
-        const filteredMovies = movies.filter(movie =>
-            movie.name.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-      
+    console.log(movies);
+
+    const filteredMovies = movies.filter(movie =>
+        movie.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
 
     return (
         <div className='flex  flex-col items-center mt-12' >
@@ -40,19 +40,19 @@ console.log(movies);
 
 
             <div className="search relative lg:w-[50rem] flex justify-center gap-2 mt-4">
-               
-                    <CgSearch className='absolute top-1/2 -translate-y-1/2 font-extrabold  left-1' />
-                    <input type="text"
-                         name="" id="" 
-                         className='rounded-3xl w-full h-16 pl-8' 
-                         placeholder='Enter the movie name '
-                         onChange={(e) => setsearchQuery(e.target.value)}
-                         />
-                   
-                   <div className='bg-white rounded-full flex justify-center items-center w-12'
-                    
-                      > <FaArrowRight /> </div>
-               
+
+                <CgSearch className='absolute top-1/2 -translate-y-1/2 font-extrabold  left-1' />
+                <input type="text"
+                    name="" id=""
+                    className='rounded-3xl w-full h-16 pl-8'
+                    placeholder='Enter the movie name '
+                    onChange={(e) => setsearchQuery(e.target.value)}
+                />
+
+                <div className='bg-white rounded-full flex justify-center items-center w-12'
+
+                > <FaArrowRight /> </div>
+
             </div>
 
 
@@ -64,23 +64,27 @@ console.log(movies);
                 <p className='text-white lg:font-bold lg:px-40 mt-4 px-4'>
                     This is the website where you can download any kind of movies as per your perferieenc happy entertainment
                     This is the website where you can download any kind of movies as per your perferieenc happy entertainment
-                    </p>
+                </p>
             </div>
             <div> </div>
 
 
 
-            <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'> 
-               {filteredMovies.map((item)=><Card 
-               name={item.name}
-               genre={item.genre}
-               language={item.language}
-               duratioin={item.duration}
-               thumbinal={item.thumbinal}
-               date={item.date}
-               rating={item.rating}
+            <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'>
+                {filteredMovies.map((item) => <Card
+                    name={item.name}
+                    genre={item.genre}
+                    language={item.language}
+                    duration={item.duration}
+                    thumbnail
+                    ={item.thumbnail
+                    }
+                    date={item.date}
+                    rating={item.rating}
+                    movie_url={item.movie_url}
+                    id={item.id}
 
-               />)}
+                />)}
             </div>
         </div>
     )

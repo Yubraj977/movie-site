@@ -1,11 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function Card({name,download_url,thumbinal,rating,genre,language,duratioin,date}) {
+
+function Card({name,genre,language,duration,thumbnail,date,rating,id}) {
+    const navigate = useNavigate();
+  
+    function handleClick(){
+        navigate(`/movie/${id}`);
+    }
+
     return (
-        <div className="main  lg:w-64 lg:h-[30rem] w-40 h-[20rem]" >
+        <div className="main  lg:w-64 lg:h-[30rem] w-40 h-[20rem] hover:scale-100"  onClick={handleClick}>
 
             <div className="image  w-full h-5/6">
-                <img src={thumbinal} alt="" className='objec-cover h-full w-full' />
+                <img src={thumbnail} alt="" className='objec-cover h-full w-full' />
             </div>
 
             <div className='info'>
@@ -39,7 +47,7 @@ function Card({name,download_url,thumbinal,rating,genre,language,duratioin,date}
                 </div>
                 
                 <div className='w-full justify-between flex p-2 text-white'>
-                    <h1>{duratioin}</h1>
+                    <h1>{duration}</h1>
                     <h2>{date}</h2>
                 </div>
 

@@ -1,0 +1,44 @@
+import React from 'react'
+import  { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+
+function MovieDetailsPage() {
+    const [movie,setmovie]=useState()
+    const { id } = useParams();
+    useEffect(() => {
+        fetch(`https://lyricsa-z.xyz/api/movie/${id}`)
+            .then((data) => data.json())
+            .then((movie) => {
+                setmovie(movie);
+                
+            })
+    }, [])
+   console.log(id);
+   console.log(movie);
+  return (
+    <>     {movie ? (
+                <div className='flex flex-col items-center mt-12'>
+                    <h1 className='text-white text-6xl font-bold'>{movie.name}</h1>
+                    <div className='border w-11/12 aspect-video' ></div>
+                    <div className='text-white text-2xl mt-4'>
+                        <h1>Movie Name:{movie.name}</h1>
+                        <h1>Duration:{movie.duration} m </h1>
+                        <h1>Language:{movie.language} </h1>
+                        <h1>Rating: {movie.rating}</h1>
+                        <h1>Genre: {movie.genre}</h1>
+                    </div>
+                    <button className='border px-4 py-2 mt-12 text-white bg-blue-900 hover:bg-transparent'>Download</button>
+                    {/* Render other movie details here */}
+                </div>
+            ) : (
+                <div className='felx h-screen justify-center items-center'>
+                <p className='text-white text-6xl' >Loading...</p> 
+                </div>// You can replace this with any loading indicator or placeholder content
+            )}
+  </>
+
+  )
+}
+
+export default MovieDetailsPage
