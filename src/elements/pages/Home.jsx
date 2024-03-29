@@ -1,10 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import { CgSearch } from "react-icons/cg";
 import Card from './components/Card';
 import movie from '../../movie';
-console.log(movie);
+
+
 function Home() {
+    const [movies,setmovies]=useState([])
+    const [searchQuery,setsearchQuery]=useState('')
+    console.log(movies);
+    useEffect(() => {
+        fetch('https://lyricsa-z.xyz/api/movie/')
+            .then((data) => data.json())
+            .then((movie) => {
+                setmovies(movie);
+                
+            })
+    }, [])
+
+
+    // const filtredMovies=movies.filter((movie)=>movie.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    // console.log(searchQuery);
+    // console.log(filtredMovies);
+console.log(movies);
+  
+        const filteredMovies = movies.filter(movie =>
+            movie.name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      
+
     return (
         <div className='flex  flex-col items-center mt-12' >
 
@@ -17,9 +42,16 @@ function Home() {
             <div className="search relative lg:w-[50rem] flex justify-center gap-2 mt-4">
                
                     <CgSearch className='absolute top-1/2 -translate-y-1/2 font-extrabold  left-1' />
-                    <input type="text" name="" id="" className='rounded-3xl w-full h-16 pl-8' placeholder='Enter the movie name ' />
+                    <input type="text"
+                         name="" id="" 
+                         className='rounded-3xl w-full h-16 pl-8' 
+                         placeholder='Enter the movie name '
+                         onChange={(e) => setsearchQuery(e.target.value)}
+                         />
                    
-                   <div className='bg-white rounded-full flex justify-center items-center w-12'> <FaArrowRight /> </div>
+                   <div className='bg-white rounded-full flex justify-center items-center w-12'
+                    
+                      > <FaArrowRight /> </div>
                
             </div>
 
@@ -38,8 +70,8 @@ function Home() {
 
 
 
-            <div className='flex flex-wrap gap-3 justify-center mt-10'> 
-               {movie.map((item)=><Card 
+            <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'> 
+               {filteredMovies.map((item)=><Card 
                name={item.name}
                genre={item.genre}
                language={item.language}
