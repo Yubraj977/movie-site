@@ -20,7 +20,9 @@ function MovieDetailsPage() {
     <>     {movie ? (
                 <div className='flex flex-col items-center mt-12'>
                     <h1 className='text-white text-6xl font-bold'>{movie.name}</h1>
-                    <div className='border w-11/12 aspect-video' ></div>
+                    <div className='border w-11/12 aspect-video' >
+                        <img src={movie.thumbnail} alt=""  className='h-full w-full object-cover'/>
+                    </div>
                     <div className='text-white text-2xl mt-4'>
                         <h1>Movie Name:{movie.name}</h1>
                         <h1>Duration:{movie.duration} m </h1>
