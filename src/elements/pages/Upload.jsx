@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import { Label, TextInput, Button } from "flowbite-react";
-
+import axios from 'axios';
 function Upload() {
 
 
@@ -20,32 +20,35 @@ function Upload() {
     }
 
 
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
-   const data={  "id": 1,
-   "name": "raga hu ma raga",
-   "movie_url": "jdfhjh",
-   "thumbnail": null,
-   "rating": 3,
-   "genre": "jhgjdfhg",
-   "language": "jhgjhg",
-   "duration": 123,
-   "release_date": null,}
-        fetch('https://lyricsa-z.xyz/api/movie', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data),
-        }).then((res)=>res.json()).then((a)=>{console.log(a);});
+    
+        const formData = new FormData();
+        formData.append('name', form.name);
+        formData.append('movie_url', form.movie_url);
+        formData.append('rating', form.rating);
+        formData.append('duration', form.duration);
+        formData.append('genre', form.genre);
+        formData.append('language', form.language);
+        formData.append('release_date', form.release_date);
+        formData.append('thumbnail', thumbnail);
+    
+        axios.post('https://lyricsa-z.xyz/api/movie/', formData)
+            .then(function (response) {
+                console.log(response.data);
+                // Clear form after successful submission
+                setform({});
+                setThumbnail(null);
+            })
+            .catch(function (error) {
+                console.log(error.response.data);
+            });
     }
     
 
-  
-
     return (
         <div className=' flex justify-center items-center '>
-            <form className='border p-10 rounded-lg'>
+            <form className='border p-10 rounded-lg' encType="multipart/form-data"> 
 
                 <div className="flex lg:w-[35rem] flex-col gap-2 w-full">
 
@@ -73,7 +76,8 @@ function Upload() {
 
                     <Label > Release Date</Label>
                     <TextInput type="number" i placeholder="" id='release_date' onChange={handlechange} />
-                    <Button onClick={handleSubmit}>Submit</Button>
+                    <Button onClick={handleSubmit} type='submit'>Submit</Button>
+
 
                 </div>
 
