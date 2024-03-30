@@ -17,7 +17,7 @@ function Check() {
   return (
     <div>
 
-      <input type="text" placeholder='Enter our secret code' onChange={(e)=>setsecret(e.target.value)}/>
+      <input type="password" placeholder='Enter our secret code' onChange={(e)=>setsecret(e.target.value)}/>
 <Button onClick={handleclick}>Check</Button>
 
     </div>
