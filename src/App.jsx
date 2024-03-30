@@ -1,5 +1,7 @@
 import './App.css'
 import { createBrowserRouter ,createRoutesFromElements,Route,RouterProvider} from 'react-router-dom'
+import ReactGA from "react-ga4";
+import { useEffect } from 'react';
 import Nav from './elements/pages/Nav'
 import Home from './elements/pages/Home'
 import About from './elements/pages/About'
@@ -12,6 +14,7 @@ import Hindi from './elements/pages/language/Hindi'
 import English from './elements/pages/language/English'
 import Nepali from './elements/pages/language/Nepali'
 import MovieDetailsPage from './elements/pages/MovieDetailsPage'
+
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -38,6 +41,11 @@ const router=createBrowserRouter(
 function App() {
 const bg=' bg-[#302d57]'
 
+useEffect(() => {
+  ReactGA.initialize("G-3ZDYPS9JLG");
+  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+
+}, [])
   return (
     <div className='dark:bg-[#1f2937] bg-white'>
   
