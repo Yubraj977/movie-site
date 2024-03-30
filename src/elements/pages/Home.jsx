@@ -69,6 +69,7 @@ function Home() {
 
             <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'>
                 {filteredMovies.map((item) => <Card
+                    key={item.id}
                     name={item.name}
                     genre={item.genre}
                     language={item.language}

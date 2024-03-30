@@ -21,13 +21,17 @@ function Nepali() {
     <div className='flex flex-wrap gap-3 justify-center mt-10 '>
     
        { nepali&&nepali.map((item) => <Card
+        key={item.id}
         name={item.name}
         genre={item.genre}
         language={item.language}
-        duratioin={item.duration}
-        thumbnail={item.thumbnail}
-        date={item.date}
+        duration={item.duration}
+        thumbnail
+        ={item.thumbnail
+        }
+        date={item.release_date}
         rating={item.rating}
+        movie_url={item.movie_url}
         id={item.id}
 
       />)}

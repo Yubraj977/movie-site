@@ -21,14 +21,18 @@ function Comedy() {
       <div className='flex flex-wrap gap-3 justify-center mt-10 '>
       
          { comedy&&comedy.map((item) => <Card
-          name={item.name}
-          genre={item.genre}
-          language={item.language}
-          duratioin={item.duration}
-          thumbnail={item.thumbnail}
-          date={item.date}
-          rating={item.rating}
-          id={item.id}
+        key={item.id}
+        name={item.name}
+        genre={item.genre}
+        language={item.language}
+        duration={item.duration}
+        thumbnail
+        ={item.thumbnail
+        }
+        date={item.release_date}
+        rating={item.rating}
+        movie_url={item.movie_url}
+        id={item.id}
 
         />)}
       </div>
