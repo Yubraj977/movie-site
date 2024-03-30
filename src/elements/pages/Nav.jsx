@@ -14,7 +14,7 @@ function Nav() {
   return (
     <>
     <div className='lg:px-20 ' >
-    <Navbar fluid rounded className="bg-transparent text-black px-20">
+    <Navbar fluid rounded className="bg-transparent text-black  ">
 
 
     <Navbar.Brand as={Link} href="#" className='lg:mt-6'>
