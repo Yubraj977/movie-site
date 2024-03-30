@@ -33,19 +33,15 @@ function Nav() {
       <Navbar.Link > <NavLink to='/tvshows' className='text-white'>Tvshows</NavLink></Navbar.Link>
 
       
-      <Navbar.Link className='text-white'>
-
-      <Link  className='text-white'>
+      <div className='ml-3'>
+      <div  className='text-white'>
       <Dropdown label="Language" inline className='text-white'>
       <Dropdown.Item><NavLink to='/nepali' className='text-white'>Nepali</NavLink></Dropdown.Item>
-
-      
       <Dropdown.Item><NavLink to='/english' className='text-white'>English</NavLink></Dropdown.Item>
       <Dropdown.Item><NavLink to='/hindi' className='text-white'>Hindi</NavLink></Dropdown.Item>
-     
     </Dropdown>
-    </Link>
-       </Navbar.Link>
+    </div>
+       </div>
 
 
     
