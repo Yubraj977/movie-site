@@ -6,7 +6,20 @@ export default {
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        pano: ["Panoptica W00 Script"],
+       
+        allerta: ['Allerta Stencil'],
+        inter:['Inter'],
+      
+        64:['Sixtyfour'],
+        whisper:["Whisper"],
+        pacifico:["Pacifico"],
+        montserrat:["Montserrat"],
+       
+      },
+    },
   },
   plugins: [
     require("flowbite/plugin"),

@@ -34,24 +34,21 @@ function Home() {
         <div className='flex  flex-col items-center mt-12' >
 
             <div className='top'>
-                <h1 className='text-white lg:text-3xl'>Find Moives Tv shows Download and enjoy</h1>
+                <h1 className='text-white lg:text-3xl font-allerta'>Find Moives Tv shows Download and enjoy</h1>
             </div>
 
 
 
             <div className="search relative lg:w-[50rem] flex justify-center gap-2 mt-4">
 
-                <CgSearch className='absolute top-1/2 -translate-y-1/2 font-extrabold  left-1' />
+                <CgSearch className='absolute top-1/2 -translate-y-1/2 font-extrabold  left-1 h-12 w-8 aspect-square' />
                 <input type="text"
                     name="" id=""
-                    className='rounded-3xl w-full h-16 pl-8'
+                    className='rounded-3xl w-full h-16 pl-12'
                     placeholder='Enter the movie name '
                     onChange={(e) => setsearchQuery(e.target.value)}
                 />
 
-                <div className='bg-white rounded-full flex justify-center items-center w-12'
-
-                > <FaArrowRight /> </div>
 
             </div>
 
@@ -61,7 +58,7 @@ function Home() {
 
 
             <div>
-                <p className='text-white lg:font-bold lg:px-40 mt-4 px-4'>
+                <p className='text-white lg:font-bold lg:px-40 mt-4 px-4 font-allerta'>
                     This is the website where you can download any kind of movies as per your perferieenc happy entertainment
                     This is the website where you can download any kind of movies as per your perferieenc happy entertainment
                 </p>
@@ -79,7 +76,7 @@ function Home() {
                     thumbnail
                     ={item.thumbnail
                     }
-                    date={item.date}
+                    date={item.release_date}
                     rating={item.rating}
                     movie_url={item.movie_url}
                     id={item.id}

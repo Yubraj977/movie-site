@@ -17,27 +17,21 @@ function Upload() {
     function handleThumbnailChange(e) {
       
         setThumbnail(e.target.files[0]);
+        
     }
 
 
     async function handleSubmit(e) {
         e.preventDefault();
-   const data={  "id": 1,
-   "name": "raga hu ma raga",
-   "movie_url": "jdfhjh",
-   "thumbnail": null,
-   "rating": 3,
-   "genre": "jhgjdfhg",
-   "language": "jhgjhg",
-   "duration": 123,
-   "release_date": null,}
+ const data={...form,thumbnail:thumbnail}
+ console.log(data);
         fetch('https://lyricsa-z.xyz/api/movie', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data),
-        }).then((res)=>res.json()).then((a)=>{console.log(a);});
+        }).then((res)=>res.json()).then((a)=>{console.log(a);}).catch((err)=>console.log(`the eroor for server ${err}`));
     }
     
 

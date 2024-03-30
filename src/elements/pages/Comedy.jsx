@@ -25,7 +25,7 @@ function Comedy() {
           genre={item.genre}
           language={item.language}
           duratioin={item.duration}
-          thumbinal={item.thumbinal}
+          thumbnail={item.thumbnail}
           date={item.date}
           rating={item.rating}
           id={item.id}

@@ -6,6 +6,7 @@ import { Navbar } from 'flowbite-react'
 import { DarkThemeToggle } from 'flowbite-react'
 import { Link,NavLink } from 'react-router-dom'
 import { Footer } from "flowbite-react";
+import jerry from '../../assets/jerry.png'
 function Nav() {
   const navigate=useNavigate()
     const has='#1f2937'
@@ -14,9 +15,9 @@ function Nav() {
     <Navbar fluid rounded className="bg-transparent text-white">
 
 
-    <Navbar.Brand as={Link} href="#">
-      <img src="https://images.unsplash.com/photo-1567446537708-ac4aa75c9c28?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-      <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Chalachitra</span>
+    <Navbar.Brand as={Link} href="#" className='mt-6'>
+      <img src={jerry} className="mr-3 lg:h-12  sm:h-9" alt="Flowbite React Logo" />
+      <span className="self-center whitespace-nowrap text-4xl font-semibold dark:text-white font-allerta ">Yms <span className='text-cyan-300'> Hub</span> </span>
     </Navbar.Brand>
     <div className="flex md:order-2 gap-4">
     <DarkThemeToggle />
@@ -29,6 +30,7 @@ function Nav() {
       <Navbar.Link>  <NavLink to='/' className='text-white' >Home</NavLink> </Navbar.Link>
       <Navbar.Link > <NavLink to='/comedy' className='text-white'>Comedy</NavLink></Navbar.Link>
       <Navbar.Link > <NavLink to='/tvshows' className='text-white'>Tvshows</NavLink></Navbar.Link>
+      <Navbar.Link > <NavLink to='/language' className='text-white'>Language</NavLink></Navbar.Link>
       <Navbar.Link > <NavLink to='/about' className='text-white'>About</NavLink></Navbar.Link>
       <Navbar.Link > <NavLink to='/check' className='text-white'>upload</NavLink></Navbar.Link>
      

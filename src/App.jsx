@@ -7,6 +7,8 @@ import Comedy from './elements/pages/Comedy'
 import Tvshows from './elements/pages/Tvshows'
 import Check from './elements/pages/Check'
 import Upload from './elements/pages/Upload'
+import Language from './elements/pages/Language'
+
 import MovieDetailsPage from './elements/pages/MovieDetailsPage'
 
 const router=createBrowserRouter(
@@ -17,6 +19,7 @@ const router=createBrowserRouter(
       <Route path='about' element={<About/>}/>
       <Route path='comedy' element={<Comedy/>}/>
       <Route path='tvshows' element={<Tvshows/>}/>
+      <Route path='language' element={<Language/>}/>
       <Route path='upload' element={<Upload/>}/>
       <Route path='check' element={<Check/>}/>
       <Route path="/movie/:id" element={<MovieDetailsPage />} />

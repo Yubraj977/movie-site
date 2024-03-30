@@ -10,7 +10,7 @@ function Card({name,genre,language,duration,thumbnail,date,rating,id}) {
     }
 
     return (
-        <div className="main  lg:w-64 lg:h-[30rem] w-40 h-[20rem] hover:scale-100"  onClick={handleClick}>
+        <div className="main  lg:w-64 lg:h-[30rem] w-40 h-[20rem] hover:scale-100 border"  onClick={handleClick} >
 
             <div className="image  w-full h-5/6">
                 <img src={thumbnail} alt="" className='objec-cover h-full w-full' />
@@ -46,9 +46,9 @@ function Card({name,genre,language,duration,thumbnail,date,rating,id}) {
 
                 </div>
                 
-                <div className='w-full justify-between flex p-2 text-white'>
-                    <h1>{duration}</h1>
-                    <h2>{date}</h2>
+                <div className='w-full justify-between flex py-2 text-white'>
+                    <h1 className='font-bold text-white font-inter'>{duration} min</h1>
+                    <h2 className='font-inter'>{date}</h2>
                 </div>
 
 

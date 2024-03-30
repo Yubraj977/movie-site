@@ -1,11 +1,30 @@
+
+@import url(https://db.onlinewebfonts.com/c/89f9d5d8d8cfe941b20f6a20f4dd99bc?family=Panoptica+W00+Script);
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Inter:wght@100..900&family=Micro+5&family=Pacifico&family=Sixtyfour&family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Inter:wght@100..900&family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Sixtyfour&family=Whisper&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family:  "Allerta Stencil","Panoptica W00 Script","Inter","Micro 5","Sixtyfour","Whisper","Pacifico","Montserrat"  sans-serif;
+
+    src: url("https://db.onlinewebfonts.com/t/89f9d5d8d8cfe941b20f6a20f4dd99bc.eot");
+    src: url("https://db.onlinewebfonts.com/t/89f9d5d8d8cfe941b20f6a20f4dd99bc.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/89f9d5d8d8cfe941b20f6a20f4dd99bc.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/89f9d5d8d8cfe941b20f6a20f4dd99bc.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/89f9d5d8d8cfe941b20f6a20f4dd99bc.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/89f9d5d8d8cfe941b20f6a20f4dd99bc.svg#Panoptica W00 Script")format("svg");
+    font-family: "Allerta Stencil", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+      
+}
+  
 .active{
     color: rgb(17, 245, 185);
     font: bold;
     
-}
-*{
-    /* border: 1px solid red; */
 }
