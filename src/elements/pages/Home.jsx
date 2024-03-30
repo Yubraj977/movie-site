@@ -34,7 +34,7 @@ function Home() {
         <div className='flex  flex-col items-center mt-12' >
 
             <div className='top'>
-                <h1 className='text-white lg:text-3xl font-allerta'>Find Moives Tv shows Download and enjoy</h1>
+                <h1 className='dark:text-white lg:text-3xl font-allerta'>Find Moives Tv shows Download and enjoy</h1>
             </div>
 
 
@@ -58,7 +58,7 @@ function Home() {
 
 
             <div>
-                <p className='text-white lg:font-bold lg:px-40 mt-4 px-4 font-allerta'>
+                <p className='dark:text-white lg:font-bold lg:px-40 mt-4 px-4 font-allerta'>
                     This is the website where you can download any kind of movies as per your perferieenc happy entertainment
                     This is the website where you can download any kind of movies as per your perferieenc happy entertainment
                 </p>

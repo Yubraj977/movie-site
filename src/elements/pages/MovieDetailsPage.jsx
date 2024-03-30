@@ -19,18 +19,18 @@ function MovieDetailsPage() {
   return (
     <>     {movie ? (
                 <div className='flex flex-col items-center mt-12'>
-                    <h1 className='text-white text-6xl font-bold'>{movie.name}</h1>
+                    <h1 className=' dark:text-white text-6xl font-bold'>{movie.name}</h1>
                     <div className='border w-11/12 aspect-video' >
                         <img src={movie.thumbnail} alt=""  className='h-full w-full object-cover'/>
                     </div>
-                    <div className='text-white text-2xl mt-4'>
+                    <div className='dark:text-white text-2xl mt-4'>
                         <h1>Movie Name:{movie.name}</h1>
                         <h1>Duration:{movie.duration} m </h1>
                         <h1>Language:{movie.language} </h1>
                         <h1>Rating: {movie.rating}</h1>
                         <h1>Genre: {movie.genre}</h1>
                     </div>
-                    <button className='border px-4 py-2 mt-12 text-white bg-blue-900 hover:bg-transparent' > <a href={movie.movie_url} target='_blank'>Download </a></button>
+                    <button className='border hover:border-blue-600 px-10 py-3 mt-12 dark:text-white bg-blue-900 hover:bg-transparent' > <a href={movie.movie_url} target='_blank'>Download </a></button>
                     {/* Render other movie details here */}
                 </div>
             ) : (

@@ -39,7 +39,7 @@ function App() {
 const bg=' bg-[#302d57]'
 
   return (
-    <div className='dark:bg-[#1f2937] bg-slate-900'>
+    <div className='dark:bg-[#1f2937] bg-white'>
   
       <RouterProvider router={router}/>
     </div>

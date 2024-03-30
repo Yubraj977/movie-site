@@ -12,8 +12,9 @@ function Nav() {
   const navigate=useNavigate()
     const has='#1f2937'
   return (
+    <>
     <div className='lg:px-20 ' >
-    <Navbar fluid rounded className="bg-transparent text-white">
+    <Navbar fluid rounded className="bg-transparent text-black px-20">
 
 
     <Navbar.Brand as={Link} href="#" className='lg:mt-6'>
@@ -27,19 +28,22 @@ function Nav() {
       </div>
 
 
-    <Navbar.Collapse className='lg:ml-40 text-white'>
-      <Navbar.Link>  <NavLink to='/' className='text-white' >Home</NavLink> </Navbar.Link>
-      <Navbar.Link > <NavLink to='/comedy' className='text-white'>Comedy</NavLink></Navbar.Link>
-      <Navbar.Link > <NavLink to='/tvshows' className='text-white'>Tvshows</NavLink></Navbar.Link>
+    <Navbar.Collapse className='lg:ml-40 '>
+      <Navbar.Link>  <NavLink to='/' className=' ' >Home</NavLink> </Navbar.Link>
+      <Navbar.Link > <NavLink to='/comedy' className=' '>Comedy</NavLink></Navbar.Link>
+      <Navbar.Link > <NavLink to='/tvshows' className=' '>Tvshows</NavLink></Navbar.Link>
 
       
       <div className='ml-3'>
-      <div  className='text-white'>
-      <Dropdown label="Language" inline className='text-white'>
-      <Dropdown.Item><NavLink to='/nepali' className='text-white'>Nepali</NavLink></Dropdown.Item>
-      <Dropdown.Item><NavLink to='/english' className='text-white'>English</NavLink></Dropdown.Item>
-      <Dropdown.Item><NavLink to='/hindi' className='text-white'>Hindi</NavLink></Dropdown.Item>
+      <div  className='text-black dark:text-white'>
+      <Dropdown label="Language" inline className=' bg-slate-500  ' size="lg">
+      <Dropdown.Item className='text-black'><NavLink to='/nepali' className='text-black  '>Nepali</NavLink></Dropdown.Item>
+      <Dropdown.Item className='text-black'><NavLink to='/english' className='text-black  '>English</NavLink></Dropdown.Item>
+      <Dropdown.Item><NavLink to='/hindi' className='text-black  '>Hindi</NavLink></Dropdown.Item>
     </Dropdown>
+
+  
+
     </div>
        </div>
 
@@ -47,23 +51,25 @@ function Nav() {
     
 
 
-      <Navbar.Link > <NavLink to='/about' className='text-white'>About</NavLink></Navbar.Link>
-      <Navbar.Link > <NavLink to='/check' className='text-white'>upload</NavLink></Navbar.Link>
+      <Navbar.Link > <NavLink to='/about' className=' '>About</NavLink></Navbar.Link>
+      <Navbar.Link > <NavLink to='/check' className=' '>upload</NavLink></Navbar.Link>
      
   
     </Navbar.Collapse>
   </Navbar>
   <Outlet/>
-  <Footer container className='mt-12 bg-slate-900' >
-      <Footer.Copyright onClick={()=>{Navigate('/')}} by="Chalachitra™" year={2024} />
-      <Footer.LinkGroup className='mt-4'>
-        <Footer.Link onClick={()=>{navigate('/about')}}>About</Footer.Link>
-        <Footer.Link href="#">Privacy Policy</Footer.Link>
-        <Footer.Link href="#">Licensing</Footer.Link>
-        
-      </Footer.LinkGroup>
-    </Footer>
+  
   </div>
+  <Footer container className='mt-12 bg-slate-900 w-full px-40 py-10' >
+  <Footer.Copyright onClick={()=>{Navigate('/')}} by="YmsHub™" year={2024} />
+  <Footer.LinkGroup className='mt-4'>
+    <Footer.Link onClick={()=>{navigate('/about')}}>About</Footer.Link>
+    <Footer.Link href="#">Privacy Policy</Footer.Link>
+    <Footer.Link href="#">Licensing</Footer.Link>
+    
+  </Footer.LinkGroup>
+</Footer>
+</>
   )
 }
 
