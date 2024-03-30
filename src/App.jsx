@@ -8,7 +8,9 @@ import Tvshows from './elements/pages/Tvshows'
 import Check from './elements/pages/Check'
 import Upload from './elements/pages/Upload'
 import Language from './elements/pages/Language'
-
+import Hindi from './elements/pages/language/Hindi'
+import English from './elements/pages/language/English'
+import Nepali from './elements/pages/language/Nepali'
 import MovieDetailsPage from './elements/pages/MovieDetailsPage'
 
 const router=createBrowserRouter(
@@ -20,9 +22,15 @@ const router=createBrowserRouter(
       <Route path='comedy' element={<Comedy/>}/>
       <Route path='tvshows' element={<Tvshows/>}/>
       <Route path='language' element={<Language/>}/>
+
+      <Route path='hindi' element={<Hindi/>}/>
+      <Route path='english' element={<English/>}/>
+      <Route path='nepali' element={<Nepali/>}/>
+
       <Route path='upload' element={<Upload/>}/>
       <Route path='check' element={<Check/>}/>
       <Route path="/movie/:id" element={<MovieDetailsPage />} />
+    
     </Route>
   )
 )
