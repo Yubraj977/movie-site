@@ -16,9 +16,9 @@ function Comedy() {
 
   console.log(comedy);
   return (
-    <div className='h-screen'>
+    <div className='min-h-screen'>
 
-      <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'>
+      <div className='flex flex-wrap gap-3 justify-center mt-10 '>
       
          { comedy&&comedy.map((item) => <Card
           name={item.name}
