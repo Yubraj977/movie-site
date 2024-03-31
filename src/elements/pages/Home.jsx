@@ -1,34 +1,56 @@
 import React, { useState } from 'react'
-import { useEffect } from 'react';
+import { useEffect,useMemo } from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import { CgSearch } from "react-icons/cg";
 import Card from './components/Card';
-import movie from '../../movie';
+
 
 
 function Home() {
-    const [movies, setmovies] = useState([])
+    const [movies, setMovies] = useState([])
     const [searchQuery, setsearchQuery] = useState('')
+    const [loading,setLoading]=useState(true)
+    const [error,setError]=useState(null)
     console.log(movies);
+    // useEffect(() => {
+    //     fetch('https://lyricsa-z.xyz/api/movie/')
+    //         .then((data) => data.json())
+    //         .then((movie) => {
+    //             setmovies(movie);
+
+    //         })
+    // }, [])
     useEffect(() => {
         fetch('https://lyricsa-z.xyz/api/movie/')
-            .then((data) => data.json())
-            .then((movie) => {
-                setmovies(movie);
+            .then((response) => {
 
+                if (!response.ok) {
+                    throw new Error('Failed to fetch movies');
+                }
+                return response.json();
             })
-    }, [])
+            .then((data) => {
+                
+                setMovies(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.message);
+                setLoading(false);
+            });
+    }, []);
 
 
-    // const filtredMovies=movies.filter((movie)=>movie.name.toLowerCase().includes(searchQuery.toLowerCase()))
-    // console.log(searchQuery);
-    // console.log(filtredMovies);
-    console.log(movies);
+   
 
-    const filteredMovies = movies.filter(movie =>
-        movie.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    // const filteredMovies = useMemo(() => {
+    //     return movies.filter(movie =>
+    //         movie.name.toLowerCase().includes(searchQuery.toLowerCase())
+    //     );
+    // }, [movies, searchQuery]);
 
+
+   
 
     return (
         <div className='flex  flex-col items-center mt-12' >
@@ -66,9 +88,8 @@ function Home() {
             <div> </div>
 
 
-
-            <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'>
-                {filteredMovies.map((item) => <Card
+   {loading?<div className='text-5xl text-white mt-40'>Loading........</div>:  <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'>
+                {movies && movies.map((item) => <Card
                     key={item.id}
                     name={item.name}
                     genre={item.genre}
@@ -83,7 +104,10 @@ function Home() {
                     id={item.id}
 
                 />)}
-            </div>
+            </div>}
+          
+
+
         </div>
     )
 }
