@@ -3,6 +3,7 @@ import { useEffect,useMemo } from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import { CgSearch } from "react-icons/cg";
 import Card from './components/Card';
+import Lazy from '../../utils/Lazy';
 
 
 
@@ -10,16 +11,13 @@ function Home() {
     const [movies, setMovies] = useState([])
     const [searchQuery, setsearchQuery] = useState('')
     const [loading,setLoading]=useState(true)
-    const [error,setError]=useState(null)
-    console.log(movies);
-    // useEffect(() => {
-    //     fetch('https://lyricsa-z.xyz/api/movie/')
-    //         .then((data) => data.json())
-    //         .then((movie) => {
-    //             setmovies(movie);
-
-    //         })
-    // }, [])
+    const [error,seterror]=useState(null)
+    // console.log(movies);
+    const filteredMovies = useMemo(() => {
+        return movies.filter(movie => (movie.name || '').toLowerCase().includes(searchQuery.toLowerCase()));
+    }, [movies, searchQuery]);
+    console.log(filteredMovies);
+   
     useEffect(() => {
         fetch('https://lyricsa-z.xyz/api/movie/')
             .then((response) => {
@@ -43,16 +41,11 @@ function Home() {
 
    
 
-    // const filteredMovies = useMemo(() => {
-    //     return movies.filter(movie =>
-    //         movie.name.toLowerCase().includes(searchQuery.toLowerCase())
-    //     );
-    // }, [movies, searchQuery]);
-
 
    
 
     return (
+    
         <div className='flex  flex-col items-center mt-12' >
 
             <div className='top'>
@@ -70,7 +63,7 @@ function Home() {
                     placeholder='Enter the movie name '
                     onChange={(e) => setsearchQuery(e.target.value)}
                 />
-
+               
 
             </div>
 
@@ -85,11 +78,12 @@ function Home() {
                     This is the website where you can download any kind of movies as per your perferieenc happy entertainment
                 </p>
             </div>
-            <div> </div>
+           
 
 
-   {loading?<div className='text-5xl text-white mt-40'>Loading........</div>:  <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'>
-                {movies && movies.map((item) => <Card
+   {loading?(<Lazy/>)
+   :  <div className='flex flex-wrap gap-3 justify-center mt-10 min-h-screen'>
+                {filteredMovies && filteredMovies.map((item) => <Card
                     key={item.id}
                     name={item.name}
                     genre={item.genre}

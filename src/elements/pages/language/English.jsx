@@ -2,7 +2,10 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Card from '../components/Card'
 function English() {
-    const [english,setenglish]=useState()
+    const [english,setenglish]=useState([])
+
+    const languagesToCheck=['english','en','eng']
+
 
 
     useEffect(() => {
@@ -10,9 +13,16 @@ function English() {
         .then((data) => data.json())
         .then((movie) => {
           console.log(movie);
-        const english=movie.filter((movie)=>movie.language.toLowerCase().includes("english"))
-            setenglish(english)
-        })
+       
+
+
+        const english = movie.filter((movie) => {
+          const movieLanguage = movie.language.toLowerCase();
+          return languagesToCheck.some(lang => movieLanguage.includes(lang));
+          
+      });
+      setenglish(english)
+    })
     }, [])
 
   return (
