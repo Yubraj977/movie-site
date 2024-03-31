@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from 'react'
 import { Label, TextInput, Button } from "flowbite-react";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function Upload() {
-
+const navigate=useNavigate()
 
     const [form, setform] = useState({})
     const [thumbnail, setThumbnail] = useState(null);
@@ -37,9 +38,13 @@ function Upload() {
         axios.post('https://lyricsa-z.xyz/api/movie/', formData)
             .then(function (response) {
                 console.log(response.data);
-                // Clear form after successful submission
-                setform({});
+               if(response.status==201){
+                navigate('/')
+               }
+                setform('');
+                
                 setThumbnail(null);
+                
             })
             .catch(function (error) {
                 console.log(error.response.data);
