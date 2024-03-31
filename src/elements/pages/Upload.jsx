@@ -112,7 +112,7 @@ function Upload() {
           if (index % 2 === 0) {
             return (
               <li key={index}>
-                {item}: {error[index + 1]}
+                <span className='text-sm text-red-900 font-inter font-bold'>{item.toUpperCase()}</span>: {error[index + 1]}
               </li>
             );
           }
