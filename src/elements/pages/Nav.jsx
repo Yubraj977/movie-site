@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import { Button } from 'flowbite-react'
@@ -8,7 +8,28 @@ import { Link,NavLink } from 'react-router-dom'
 import { Footer } from "flowbite-react";
 import jerry from '../../assets/jerry.png'
 import { Dropdown } from "flowbite-react";
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { signOutUserSucess } from '../../app/slice/userSlice'
 function Nav() {
+  const [fetchEroor,setfetchEroor]=useState()
+  async function handleSignout(){
+    try {
+      const res=await fetch('http://localhost:8080/api/user/signout',{
+        method:"POST"
+      })
+      const data=await res.json()
+      console.log(res)
+      console.log(data)
+      if(res.ok){
+        dispatch(signOutUserSucess())
+      }
+    } catch (error) {
+      setfetchEroor(error)
+    }
+  }
+  const dispatch=useDispatch()
+  const user=useSelector((state)=>state.user.currentUser)
   const navigate=useNavigate()
     const has='#1f2937'
   return (
@@ -23,7 +44,10 @@ function Nav() {
     </Navbar.Brand>
     <div className="flex md:order-2 gap-4">
     <DarkThemeToggle />
-    <Button>About Us</Button>
+    {user&&user.isAdmin?<Button onClick={(e)=>navigate('/dashboard?tab=dashboard')}>Dashboard</Button>:null}
+    { user&&user.isAdmin?<Button onClick={handleSignout}>Logout</Button>:<Button onClick={(e)=>navigate('/signin')}>sign in</Button>}
+
+
         <Navbar.Toggle />
       </div>
 
@@ -32,6 +56,7 @@ function Nav() {
       <Navbar.Link>  <NavLink to='/' className=' ' >Home</NavLink> </Navbar.Link>
       <Navbar.Link > <NavLink to='/comedy' className=' '>Comedy</NavLink></Navbar.Link>
       <Navbar.Link > <NavLink to='/tvshows' className=' '>Tvshows</NavLink></Navbar.Link>
+     
 
       
       <div className='ml-3'>
@@ -45,14 +70,18 @@ function Nav() {
   
 
     </div>
+
        </div>
 
 
     
 
 
-      <Navbar.Link > <NavLink to='/about' className=' '>About</NavLink></Navbar.Link>
-      <Navbar.Link > <NavLink to='/check' className=' '>upload</NavLink></Navbar.Link>
+       <Navbar.Link > <NavLink to='/tvshows' className=' '>About</NavLink></Navbar.Link>
+
+
+      
+     
      
   
     </Navbar.Collapse>

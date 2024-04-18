@@ -6,11 +6,12 @@ import { useParams } from 'react-router-dom';
 function MovieDetailsPage() {
     const [movie,setmovie]=useState()
     const { id } = useParams();
+   console.log(movie)
     useEffect(() => {
-        fetch(`https://lyricsa-z.xyz/api/movie/${id}`)
+        fetch(`http://localhost:8080/api/movie/find/?postId=${id}`)
             .then((data) => data.json())
             .then((movie) => {
-                setmovie(movie);
+                setmovie(movie.movie[0]);
                 
             })
     }, [])

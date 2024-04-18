@@ -14,24 +14,28 @@ import Hindi from './elements/pages/language/Hindi'
 import English from './elements/pages/language/English'
 import Nepali from './elements/pages/language/Nepali'
 import MovieDetailsPage from './elements/pages/MovieDetailsPage'
-
-
+import SignIn from './elements/pages/SignIn';
+import Dashboard from './elements/pages/dashboard/Dashboard';
+import DashboardCover from './elements/pages/dashboard/DashboardCover';
+import Updatemovie from './elements/pages/Updatemovie'
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Nav/>}>
-
       <Route path='' element={<Home/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='comedy' element={<Comedy/>}/>
       <Route path='tvshows' element={<Tvshows/>}/>
       <Route path='language' element={<Language/>}/>
-
       <Route path='hindi' element={<Hindi/>}/>
       <Route path='english' element={<English/>}/>
       <Route path='nepali' element={<Nepali/>}/>
-
       <Route path='upload' element={<Upload/>}/>
       <Route path='check' element={<Check/>}/>
+      <Route path='signin' element={<SignIn/>}/>
+      <Route element={<DashboardCover/>}>
+      <Route path='dashboard' element={<Dashboard/>}/>
+      <Route path='updatemovie/:postId' element={<Updatemovie/>}/>
+      </Route>
       <Route path="/movie/:id" element={<MovieDetailsPage />} />
     
     </Route>
