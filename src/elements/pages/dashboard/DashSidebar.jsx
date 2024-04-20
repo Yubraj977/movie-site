@@ -39,31 +39,31 @@ function DashSidebar() {
     }
   }
     return (
-        <Sidebar aria-label="Default sidebar example">
+        <Sidebar aria-label="Default sidebar example " className='lg:w-auto  border'>
           <Sidebar.Items>
             <Sidebar.ItemGroup className='flex gap-4 flex-col'>
               <Link to='/dashboard?tab=dashboard'>
               <Sidebar.Item href="#" icon={HiChartPie} active={tab == 'dashboard'} >
-                Dashboard
+             <span className='lg:block hidden'>   Dashboard</span>
               </Sidebar.Item>
               </Link>
              
               <Link to='/dashboard?tab=movies' >
               <Sidebar.Item href="#" icon={HiTable} active={tab == 'movies'}>
-                Movies
+              <span className='lg:block hidden'>   Movies</span>
               </Sidebar.Item>
               </Link>
 
               <Link to='/dashboard?tab=create'>
               <Sidebar.Item href="#" icon={FaPlus} active={tab == 'create'}>
-                Create
+              <span className='lg:block hidden'>   Create</span>
               </Sidebar.Item>
               </Link>
 
 
               <div onClick={handleSignout}>
               <Sidebar.Item href="#" icon={HiArrowSmRight} >
-                Logout
+              <span className='lg:block hidden'>   Logout</span>
               </Sidebar.Item>
               </div>
             </Sidebar.ItemGroup>
