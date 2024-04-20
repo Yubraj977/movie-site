@@ -50,7 +50,7 @@ function Home() {
 
     return (
         <div className="flex flex-col items-center mt-8">
-            <div className="top">
+            <div className="top ">
                 <h1 className="dark:text-white lg:text-3xl font-allerta">Find Movies TV shows Download and enjoy</h1>
             </div>
             <div className="search relative lg:w-[50rem] flex justify-center gap-2 mt-8">
@@ -64,11 +64,12 @@ function Home() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
             </div>
-            <div>
-                <p className="dark:text-white lg:font-bold lg:px-80 mt-8 px-8 font-allerta">
-                    This is the website where you can download any kind of movies as per your preference happy entertainment
-                    This is the website where you can download any kind of movies as per your preference happy entertainment
-                </p>
+            <div className=''>
+                <div className="dark:text-white lg:font-bold lg:px-10 m-8 px-8 font-allerta">
+                    <p> This is the website where you can download any kind of movies as per your preference happy entertainment </p>
+                   <p> This is the website where you can download any kind of movies as per your preference happy entertainment</p>
+                   
+                </div>
             </div>
             {loading ? (
                 <Lazy />
