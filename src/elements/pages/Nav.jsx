@@ -15,7 +15,7 @@ function Nav() {
   const [fetchEroor,setfetchEroor]=useState()
   async function handleSignout(){
     try {
-      const res=await fetch('http://localhost:8080/api/user/signout',{
+      const res=await fetch('https://ymshub-api.onrender.com/api/user/signout',{
         method:"POST"
       })
       const data=await res.json()

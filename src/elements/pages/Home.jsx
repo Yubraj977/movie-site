@@ -17,7 +17,7 @@ function Home() {
         async function fetchApi() {
             setLoading(true);
             try {
-                const res = await fetch(`/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`);
+                const res = await fetch(`https://ymshub-api.onrender.com/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`);
                 const data = await res.json();
                 if (res.ok) {
                     setMovies(data.movie);

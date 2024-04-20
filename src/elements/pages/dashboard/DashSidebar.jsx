@@ -25,7 +25,7 @@ function DashSidebar() {
   const navigate=useNavigate()
   async function handleSignout(){
     try {
-      const res=await fetch('/api/user/signout',{
+      const res=await fetch('https://ymshub-api.onrender.com/api/user/signout',{
         method:"POST"
       })
       const data=await res.json()
