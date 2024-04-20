@@ -21,7 +21,7 @@ function Dashmovie() {
   useEffect(() => {
     try {
       async function fetchData() {
-        const res = await fetch('http://localhost:8080/api/movie/find/')
+        const res = await fetch('/api/movie/find/')
         const data = await res.json()
         if (res.ok) {
           setmovies(data.movie)

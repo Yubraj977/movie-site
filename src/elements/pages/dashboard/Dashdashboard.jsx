@@ -7,7 +7,7 @@ function Dashdashboard() {
   useEffect(() => {
 
   async function fetchapi(){
-const res=await fetch('http://localhost:8080/api/movie/find')
+const res=await fetch('/api/movie/find')
 const data=await res.json()
 if(res.ok){
   settotalMovies(data.totalMovies)

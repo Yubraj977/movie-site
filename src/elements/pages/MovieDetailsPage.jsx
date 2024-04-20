@@ -8,7 +8,7 @@ function MovieDetailsPage() {
     const { id } = useParams();
    console.log(movie)
     useEffect(() => {
-        fetch(`http://localhost:8080/api/movie/find/?postId=${id}`)
+        fetch(`/api/movie/find/?postId=${id}`)
             .then((data) => data.json())
             .then((movie) => {
                 setmovie(movie.movie[0]);

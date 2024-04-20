@@ -17,7 +17,7 @@ function Home() {
         async function fetchApi() {
             setLoading(true);
             try {
-                const res = await fetch(`http://localhost:8080/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`);
+                const res = await fetch(`/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`);
                 const data = await res.json();
                 if (res.ok) {
                     setMovies(data.movie);
