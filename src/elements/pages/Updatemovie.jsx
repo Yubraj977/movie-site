@@ -25,7 +25,7 @@ function Updatemovie() {
   useEffect(() => {
     try {
       const fetchPost = async () => {
-        const res = await fetch(`http://localhost:8080/api/movie/find/?postId=${postId}`);
+        const res = await fetch(`https://ymshub-api.onrender.com/api/movie/find/?postId=${postId}`);
         const data = await res.json();
         if (!res.ok) {
           console.log(data.message);
