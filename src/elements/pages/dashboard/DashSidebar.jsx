@@ -39,7 +39,7 @@ function DashSidebar() {
     }
   }
     return (
-        <Sidebar aria-label="Default sidebar example " className='lg:w-auto  border'>
+        <Sidebar aria-label="Default sidebar example " className='lg:w-auto  '>
           <Sidebar.Items>
             <Sidebar.ItemGroup className='flex gap-4 flex-col'>
               <Link to='/dashboard?tab=dashboard'>
