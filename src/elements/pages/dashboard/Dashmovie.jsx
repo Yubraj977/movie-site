@@ -42,7 +42,7 @@ function Dashmovie() {
   async function handleDelete(){
 setOpenModal(false)
    try {
-    const res=await fetch(`http://localhost:8080/api/movie/delete/${movieIdToDelete}`,{
+    const res=await fetch(`https://ymshub-api.onrender.com/api/movie/delete/${movieIdToDelete}`,{
       method:"DELETE"
     })
     const data=await res.json()

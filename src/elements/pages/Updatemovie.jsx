@@ -87,7 +87,7 @@ function Updatemovie() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:8080/api/movie/update/${postId}`, {
+      const res = await fetch(`https://ymshub-api.onrender.com/api/movie/update/${postId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
