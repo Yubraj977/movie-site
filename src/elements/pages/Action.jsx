@@ -4,7 +4,7 @@ import { CgSearch } from 'react-icons/cg';
 import Card from './components/Card';
 import Lazy from '../../utils/Lazy';
 import { Pagination } from 'flowbite-react';
-function Comedy() {
+function Action() {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
@@ -16,7 +16,7 @@ function Comedy() {
     async function fetchApi() {
       setLoading(true);
       try {
-        const res = await fetch(`https://ymshub-api.onrender.com/api/movie/find/?startIndex=${(currentPage - 1) * 4}&limit=4 &genre=comedy`);
+        const res = await fetch(`https://ymshub-api.onrender.com/api/movie/find/?startIndex=${(currentPage - 1) * 4}&limit=4 &genre=action`);
         const data = await res.json();
         if (res.ok) {
           setMovies(data.movie);
@@ -97,4 +97,4 @@ function Comedy() {
   )
 }
 
-export default Comedy
+export default Action

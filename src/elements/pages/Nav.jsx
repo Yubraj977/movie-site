@@ -55,7 +55,7 @@ function Nav() {
     <Navbar.Collapse className='lg:ml-40 '>
       <Navbar.Link>  <NavLink to='/' className=' ' >Home</NavLink> </Navbar.Link>
       <Navbar.Link > <NavLink to='/comedy' className=' '>Comedy</NavLink></Navbar.Link>
-      <Navbar.Link > <NavLink to='/tvshows' className=' '>Tvshows</NavLink></Navbar.Link>
+      <Navbar.Link > <NavLink to='/action' className=' '>Action</NavLink></Navbar.Link>
      
 
       
@@ -77,7 +77,7 @@ function Nav() {
     
 
 
-       <Navbar.Link > <NavLink to='/tvshows' className=' '>About</NavLink></Navbar.Link>
+       <Navbar.Link > <NavLink to='/about' className=' '>About</NavLink></Navbar.Link>
 
 
       

@@ -6,7 +6,7 @@ import Nav from './elements/pages/Nav'
 import Home from './elements/pages/Home'
 import About from './elements/pages/About'
 import Comedy from './elements/pages/Comedy'
-import Tvshows from './elements/pages/Tvshows'
+import Action from './elements/pages/Action'
 import Check from './elements/pages/Check'
 import Upload from './elements/pages/Upload'
 import Language from './elements/pages/Language'
@@ -24,7 +24,7 @@ const router=createBrowserRouter(
       <Route path='' element={<Home/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='comedy' element={<Comedy/>}/>
-      <Route path='tvshows' element={<Tvshows/>}/>
+      <Route path='action' element={<Action/>}/>
       <Route path='language' element={<Language/>}/>
       <Route path='hindi' element={<Hindi/>}/>
       <Route path='english' element={<English/>}/>
