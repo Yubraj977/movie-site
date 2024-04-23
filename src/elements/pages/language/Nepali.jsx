@@ -52,21 +52,12 @@ function Nepali() {
       <div className="top ">
         <h1 className="dark:text-white lg:text-3xl font-allerta">Find Movies TV shows Download and enjoy</h1>
       </div>
-      <div className="search relative lg:w-[50rem] flex justify-center gap-2 mt-8">
-        <CgSearch className="absolute top-1/2 -translate-y-1/2 font-extrabold left-1 h-8 w-8 aspect-square" />
-        <input
-          type="text"
-          name=""
-          id=""
-          className="rounded-3xl w-full h-16 pl-8"
-          placeholder="Enter the movie name"
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
+      
       <div className=''>
         <div className="dark:text-white lg:font-bold lg:px-10 m-8 px-8 font-allerta">
-          <p> This is the website where you can download any kind of movies as per your preference happy entertainment </p>
-          <p> This is the website where you can download any kind of movies as per your preference happy entertainment</p>
+          <p> Nepali MOvie || High Rated Nepali Movies || Top Movies From Nepal || most rated movies </p>
+          <p> Nepali MOvie || High Rated Nepali Movies || Top Movies From Nepal || most rated movies </p>
+     
 
         </div>
       </div>
