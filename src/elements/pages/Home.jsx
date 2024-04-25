@@ -90,9 +90,10 @@ function Home() {
                     <p> This is the website where you can download any kind of movies as per your preference happy entertainment</p>
                 </div>
             </div>
+
             {loading ? (
                 <div className=' h-screen w-full flex  flex-col items-center pt-5'>
-                 
+{/*                  
                     <DNA
                         visible={true}
                         height="450"
@@ -100,7 +101,8 @@ function Home() {
                         ariaLabel="dna-loading"
                         wrapperStyle={{}}
                         wrapperClass="dna-wrapper"
-                    />
+                    /> */}
+                    Loading ....
                 </div>
             ) : (
                 <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
@@ -122,6 +124,8 @@ function Home() {
                     {movies&&movies.length == 0 && (<div className='text-6xl dark:text-white'> Not Found </div>)}
                 </div>
             )}
+
+
             <div className="flex mt-8">
                 <Pagination currentPage={currentPage} totalPages={totalPage} onPageChange={handlePageChange} />
             </div>
