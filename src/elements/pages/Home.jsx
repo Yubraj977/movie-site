@@ -17,7 +17,7 @@ function Home() {
     const fetchMovies = async () => {
         setLoading(true);
         try {
-            let url = `/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`;
+            let url = `https://letsdownload.xyz/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`;
             if (searchQuery.trim() !== '') {
                 url += `&searchTerm=${encodeURIComponent(searchQuery.trim())}`;
             }
