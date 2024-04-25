@@ -38,9 +38,9 @@ function Nav() {
     <Navbar fluid rounded className="bg-transparent text-black  ">
 
 
-    <Navbar.Brand as={Link} href="#" className='lg:mt-6'>
-      <img src={jerry} className="mr-3 lg:h-12 h-4 sm:h-9" alt="Flowbite React Logo" />
-      <span className="self-center whitespace-nowrap lg:text-4xl font-semibold dark:text-white font-allerta ">Yms <span className='text-cyan-300'> Hub</span> </span>
+    <Navbar.Brand as={Link} href="#" className='mt-6'>
+      <img src={jerry} className="mr-3 lg:h-12  sm:h-9" alt="Flowbite React Logo" />
+      <span className="self-center whitespace-nowrap text-4xl font-semibold dark:text-white font-allerta ">Yms <span className='text-cyan-300'> Hub</span> </span>
     </Navbar.Brand>
     <div className="flex md:order-2 gap-4">
     <DarkThemeToggle />

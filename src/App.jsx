@@ -37,7 +37,6 @@ const router=createBrowserRouter(
       <Route path='updatemovie/:postId' element={<Updatemovie/>}/>
       </Route>
       <Route path="/movie/:id" element={<MovieDetailsPage />} />
-    
     </Route>
   )
 )
