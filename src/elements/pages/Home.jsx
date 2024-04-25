@@ -119,7 +119,7 @@ function Home() {
                         />
                     ))}
 
-                    {movies.length == 0 && (<div className='text-6xl dark:text-white'> Not Found </div>)}
+                    {movies&&movies.length == 0 && (<div className='text-6xl dark:text-white'> Not Found </div>)}
                 </div>
             )}
             <div className="flex mt-8">
