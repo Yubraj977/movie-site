@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { CgSearch } from 'react-icons/cg';
 import Card from './components/Card';
-import Lazy from '../../utils/Lazy';
+import {Oval} from 'react-loader-spinner'
 import { Pagination } from 'flowbite-react';
 function Comedy() {
   const [movies, setMovies] = useState([]);
@@ -61,7 +61,17 @@ function Comedy() {
       </div>
     </div>
     {loading ? (
-      <Lazy />
+      <p className='h-screen mt-10'>
+        <Oval
+  visible={true}
+  height="80"
+  width="80"
+  color="#4fa94d"
+  ariaLabel="oval-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  />
+        </p>
     ) : (
       <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
         {movies.map((item) => (

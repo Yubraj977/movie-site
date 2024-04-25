@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { CgSearch } from 'react-icons/cg';
 import Card from '../components/Card';
-import Lazy from '../../../utils/Lazy';
+import {RotatingTriangles} from 'react-loader-spinner'
 import { Pagination } from 'flowbite-react';
 function English() {
   const [movies, setMovies] = useState([]);
@@ -63,7 +63,18 @@ function English() {
         </div>
       </div>
       {loading ? (
-        <Lazy />
+
+        <div className='h-screen'>
+       <RotatingTriangles
+       visible={true}
+       height="80"
+       width="80"
+       color="#4fa94d"
+       ariaLabel="rotating-triangles-loading"
+       wrapperStyle={{}}
+       wrapperClass=""
+       />
+        </div>
       ) : (
         <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
           {movies.map((item) => (

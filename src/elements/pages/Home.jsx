@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { CgSearch } from 'react-icons/cg';
 import Card from './components/Card';
-import Lazy from '../../utils/Lazy';
 import { Pagination } from 'flowbite-react';
 import { Button } from 'flowbite-react';
-import { RotatingLines } from 'react-loader-spinner'
+import { ColorRing } from 'react-loader-spinner'
 
 function Home() {
     const [movies, setMovies] = useState([]);
@@ -92,18 +91,16 @@ function Home() {
             </div>
 
             {loading ? (
-                <div className=' h-screen w-full flex  flex-col items-center pt-18'>
+                <div className=' h-screen w-full flex  flex-col items-center pt-28'>
 
-                    <RotatingLines
+                    <ColorRing
                         visible={true}
-                        height="200"
-                        width="200"
-                        color="red"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        ariaLabel="rotating-lines-loading"
+                        height="80"
+                        width="80"
+                        ariaLabel="color-ring-loading"
                         wrapperStyle={{}}
-                        wrapperClass=""
+                        wrapperClass="color-ring-wrapper"
+                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
                     />
                     <p className='text-2xl font-inter dark:text-white'>Loading</p>
                 </div>

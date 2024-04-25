@@ -7,7 +7,7 @@ import Home from './elements/pages/Home'
 import About from './elements/pages/About'
 import Comedy from './elements/pages/Comedy'
 import Action from './elements/pages/Action'
-import Check from './elements/pages/Check'
+
 import Upload from './elements/pages/Upload'
 import Language from './elements/pages/Language'
 import Hindi from './elements/pages/language/Hindi'
@@ -30,7 +30,7 @@ const router=createBrowserRouter(
       <Route path='english' element={<English/>}/>
       <Route path='nepali' element={<Nepali/>}/>
       <Route path='upload' element={<Upload/>}/>
-      <Route path='check' element={<Check/>}/>
+    
       <Route path='signin' element={<SignIn/>}/>
       <Route element={<DashboardCover/>}>
       <Route path='dashboard' element={<Dashboard/>}/>

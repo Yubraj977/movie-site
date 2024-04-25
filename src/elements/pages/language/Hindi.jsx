@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { CgSearch } from 'react-icons/cg';
 import Card from '../components/Card';
-import Lazy from '../../../utils/Lazy';
+import {FidgetSpinner} from 'react-loader-spinner'
 import { Pagination } from 'flowbite-react';
 function Hindi() {
   const [movies, setMovies] = useState([]);
@@ -63,7 +63,16 @@ function Hindi() {
         </div>
     </div>
     {loading ? (
-        <Lazy />
+        <div className='h-screen'>
+   <FidgetSpinner
+   visible={true}
+   height="80"
+   width="80"
+   ariaLabel="fidget-spinner-loading"
+   wrapperStyle={{}}
+   wrapperClass="fidget-spinner-wrapper"
+   />
+   </div>
     ) : (
         <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
             {movies.map((item) => (

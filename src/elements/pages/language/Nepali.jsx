@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { CgSearch } from 'react-icons/cg';
 import Card from '../components/Card';
-import Lazy from '../../../utils/Lazy';
 import { Pagination } from 'flowbite-react';
+import {Oval} from 'react-loader-spinner'
 function Nepali() {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -62,7 +62,17 @@ function Nepali() {
         </div>
       </div>
       {loading ? (
-        <Lazy />
+        <div className='h-screen'>
+       <Oval
+       visible={true}
+       height="80"
+       width="80"
+       color="#4fa94d"
+       ariaLabel="oval-loading"
+       wrapperStyle={{}}
+       wrapperClass=""
+       />
+       </div>
       ) : (
         <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
           {movies.map((item) => (
