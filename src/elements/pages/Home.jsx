@@ -13,7 +13,7 @@ function Home() {
     const [searchQuery, setSearchQuery] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-
+    console.log(movies)
     const fetchMovies = async () => {
         setLoading(true);
         try {
