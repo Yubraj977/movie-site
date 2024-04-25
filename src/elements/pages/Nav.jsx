@@ -15,7 +15,7 @@ function Nav() {
   const [fetchEroor,setfetchEroor]=useState()
   async function handleSignout(){
     try {
-      const res=await fetch('/api/user/signout',{
+      const res=await fetch('https://letsdownload.xyz/api/user/signout',{
         method:"POST"
       })
       const data=await res.json()

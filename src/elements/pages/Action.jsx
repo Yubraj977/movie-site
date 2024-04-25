@@ -16,7 +16,7 @@ function Action() {
     async function fetchApi() {
       setLoading(true);
       try {
-        const res = await fetch(`/api/movie/find/?startIndex=${(currentPage - 1) * 4}&limit=4 &genre=action`);
+        const res = await fetch(`https://letsdownload.xyz/api/movie/find/?startIndex=${(currentPage - 1) * 4}&limit=4 &genre=action`);
         const data = await res.json();
         if (res.ok) {
           setMovies(data.movie);

@@ -40,7 +40,7 @@ function Upload() {
         formData.append('release_date', form.release_date);
         formData.append('thumbnail', thumbnail);
 
-        axios.post('https://lyricsa-z.xyz/api/movie/', formData)
+        axios.post('https://letsdownload.xyz/api/movie/', formData)
             .then(function (response) {
                 
                

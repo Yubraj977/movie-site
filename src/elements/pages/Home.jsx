@@ -4,7 +4,7 @@ import Card from './components/Card';
 import Lazy from '../../utils/Lazy';
 import { Pagination } from 'flowbite-react';
 import { Button } from 'flowbite-react';
-import { DNA } from 'react-loader-spinner'
+import { RotatingLines } from 'react-loader-spinner'
 
 function Home() {
     const [movies, setMovies] = useState([]);
@@ -92,21 +92,24 @@ function Home() {
             </div>
 
             {loading ? (
-                <div className=' h-screen w-full flex  flex-col items-center pt-5'>
-{/*                  
-                    <DNA
+                <div className=' h-screen w-full flex  flex-col items-center pt-18'>
+
+                    <RotatingLines
                         visible={true}
-                        height="450"
-                        width="450"
-                        ariaLabel="dna-loading"
+                        height="200"
+                        width="200"
+                        color="red"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        ariaLabel="rotating-lines-loading"
                         wrapperStyle={{}}
-                        wrapperClass="dna-wrapper"
-                    /> */}
-                    Loading ....
+                        wrapperClass=""
+                    />
+                    <p className='text-2xl font-inter dark:text-white'>Loading</p>
                 </div>
             ) : (
                 <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
-                    {movies&&movies.map((item) => (
+                    {movies && movies.map((item) => (
                         <Card
                             key={item._id}
                             name={item.name}
