@@ -106,7 +106,7 @@ function Home() {
                 </div>
             ) : (
                 <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
-                    {movies.map((item) => (
+                    {movies&&movies.map((item) => (
                         <Card
                             key={item._id}
                             name={item.name}
@@ -121,7 +121,7 @@ function Home() {
                         />
                     ))}
 
-                    {movies&&movies.length == 0 && (<div className='text-6xl dark:text-white'> Not Found </div>)}
+                    {/* {movies&&movies.length == 0 && (<div className='text-6xl dark:text-white'> Not Found </div>)} */}
                 </div>
             )}
 
