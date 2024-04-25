@@ -5,23 +5,24 @@ import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Button, Modal } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-
+import { useSelector } from 'react-redux';
 
 
 
 
 
 function Dashmovie() {
+  const {currentUser}=useSelector((state)=>state.user)
   const [openModal, setOpenModal] = useState(false);
   const navigate=useNavigate()
   const [movies, setmovies] = useState();
   const [fetchError, setfetchError] = useState(null)
   const [movieIdToDelete,setmovieIdToDelete]=useState(null)
-  console.log(movies)
+
   useEffect(() => {
     try {
       async function fetchData() {
-        const res = await fetch('https://ymshub-api.onrender.com/api/movie/find/')
+        const res = await fetch('/api/movie/find/')
         const data = await res.json()
         if (res.ok) {
           setmovies(data.movie)
@@ -42,7 +43,7 @@ function Dashmovie() {
   async function handleDelete(){
 setOpenModal(false)
    try {
-    const res=await fetch(`https://ymshub-api.onrender.com/api/movie/delete/${movieIdToDelete}`,{
+    const res=await fetch(`/api/movie/delete/${movieIdToDelete}`,{
       method:"DELETE"
     })
     const data=await res.json()
@@ -50,7 +51,7 @@ setOpenModal(false)
       setfetchError(data.message)
     }
     if(res.ok){
-      console.log(data)
+     
       setmovies((prev)=>prev.filter((post)=>post._id!==movieIdToDelete))
 
     }
@@ -73,7 +74,8 @@ setOpenModal(false)
           <Table.HeadCell>Rating</Table.HeadCell>
           <Table.HeadCell>Release Date</Table.HeadCell>
           <Table.HeadCell>Edit</Table.HeadCell>
-          <Table.HeadCell>Delete</Table.HeadCell>
+          {currentUser.isAdmin&&  <Table.HeadCell>Delete</Table.HeadCell>}
+         
           <Table.HeadCell>
             <span className="sr-only">Edit</span>
           </Table.HeadCell>
@@ -97,7 +99,9 @@ setOpenModal(false)
                     Edit
                   </a>
                 </Table.Cell>
-                <Table.Cell  onClick={() =>
+
+
+{currentUser.canDelete?  <Table.Cell  onClick={() =>
                  {
                   setOpenModal(true) 
                   setmovieIdToDelete(movie._id)
@@ -105,9 +109,14 @@ setOpenModal(false)
                   <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-red-500">
                     Delete
                   </a>
-                </Table.Cell>
+                </Table.Cell> :<Table.Cell>Not Allowded</Table.Cell> }
+              
+
+
+
+
               </Table.Row>
-// onClick={()=>handleDelete(movie._id)} 
+
             )
           })}
 

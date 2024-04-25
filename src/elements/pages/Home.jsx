@@ -4,19 +4,20 @@ import Card from './components/Card';
 import Lazy from '../../utils/Lazy';
 import { Pagination } from 'flowbite-react';
 import { Button } from 'flowbite-react';
+import { DNA } from 'react-loader-spinner'
 
 function Home() {
     const [movies, setMovies] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPage, setTotalPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    
+
     const fetchMovies = async () => {
         setLoading(true);
         try {
-            let url = `https://ymshub-api.onrender.com/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`;
+            let url = `/api/movie/find/?startIndex=${(currentPage - 1) * 8}&limit=8`;
             if (searchQuery.trim() !== '') {
                 url += `&searchTerm=${encodeURIComponent(searchQuery.trim())}`;
             }
@@ -31,7 +32,7 @@ function Home() {
                 setLoading(false);
             }
         } catch (error) {
-           
+
             setLoading(false);
             setError('Error fetching data. Please try again later.');
         }
@@ -90,7 +91,17 @@ function Home() {
                 </div>
             </div>
             {loading ? (
-                <Lazy />
+                <div className=' h-screen w-full flex  flex-col items-center pt-5'>
+                 
+                    <DNA
+                        visible={true}
+                        height="450"
+                        width="450"
+                        ariaLabel="dna-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="dna-wrapper"
+                    />
+                </div>
             ) : (
                 <div className="flex flex-wrap gap-3 justify-center mt-10 min-h-screen">
                     {movies.map((item) => (
