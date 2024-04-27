@@ -16,7 +16,7 @@ function English() {
     async function fetchApi() {
       setLoading(true);
       try {
-        const res = await fetch(`https://letsdownload.xyz/api/movie/find/?startIndex=${(currentPage - 1) * 4}&limit=4 &ln=english`);
+        const res = await fetch(`https://ymshub-api.onrender.com/api/movie/find/?startIndex=${(currentPage - 1) * 4}&limit=4 &ln=english`);
         const data = await res.json();
         if (res.ok) {
           setMovies(data.movie);

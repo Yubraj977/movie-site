@@ -75,7 +75,7 @@ function MovieCreate() {
       return;
     }
     try {
-      const res = await fetch('https://letsdownload.xyz/api/movie/create', {
+      const res = await fetch('https://ymshub-api.onrender.com/api/movie/create', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -8,7 +8,7 @@ function MovieDetailsPage() {
     const { id } = useParams();
     console.log(movie)
     useEffect(() => {
-        fetch(`https://letsdownload.xyz/api/movie/find/?postId=${id}`)
+        fetch(`https://ymshub-api.onrender.com/api/movie/find/?postId=${id}`)
             .then((data) => data.json())
             .then((movie) => {
                 setmovie(movie.movie[0]);

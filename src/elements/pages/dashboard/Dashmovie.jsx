@@ -22,7 +22,7 @@ function Dashmovie() {
   useEffect(() => {
     try {
       async function fetchData() {
-        const res = await fetch('https://letsdownload.xyz/api/movie/find/')
+        const res = await fetch('https://ymshub-api.onrender.com/api/movie/find/')
         const data = await res.json()
         if (res.ok) {
           setmovies(data.movie)
